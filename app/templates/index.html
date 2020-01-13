@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <table>
+        {% for trip in trips %}
+            <tr>
+                <td>{{ trip.title }}</td>
+                <td><i>{{ trip.activity }}</i></td>
+                <td><b>{{ trip.location }}</b></td>
+                {% if trip.date %}
+                    <td>{{ trip.date.strftime('%A, %B %d, %Y') }}</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
